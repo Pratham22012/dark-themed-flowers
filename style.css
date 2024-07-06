@@ -1,0 +1,55 @@
+body {
+    background-color: #121212;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.flower-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.flower {
+    width: 100px;
+    height: 100px;
+    background-color: #ff4081;
+    border-radius: 50%;
+    position: relative;
+    animation: grow 5s infinite;
+}
+
+.flower::before,
+.flower::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: #ff4081;
+    border-radius: 50%;
+}
+
+.flower::before {
+    top: -50px;
+    left: 0;
+}
+
+.flower::after {
+    top: 0;
+    left: -50px;
+}
+
+@keyframes grow {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
